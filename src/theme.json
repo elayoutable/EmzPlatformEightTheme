@@ -1,0 +1,15 @@
+{
+  "name": "EmzPlatformEightTheme",
+  "author": "8mylez GmbH",
+  "style": [
+    "@Storefront",
+    "Resources/storefront/style/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "Resources/storefront/dist/script/all.js"
+  ],
+  "asset": [
+    "Resources/storefront/asset"
+  ]
+}
