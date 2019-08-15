@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/base.html.twig' %}
+
+{% block base_navigation %}
+    {% sw_include '@Storefront/layout/header/search.html.twig' %}
+
+    {{ parent() }}
+{% endblock %}
