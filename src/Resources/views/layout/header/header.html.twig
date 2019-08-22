@@ -3,9 +3,21 @@
 {% block layout_header_logo %}
     <div class="col-12 col-lg">
         <ul class="emz-header-navigation">
-            <li>Damen</li>
-            <li>Herren</li>
-            <li>Kinder</li>
+            {% for treeItem in page.header.navigation.tree %}
+                <li>
+                    <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(page.header.navigation.active.id) %} active{% endif %}"
+                        href="{% if treeItem.category.externalLink %}{{ treeItem.category.externalLink }}{% else %}{{ navigationUrl(treeItem.category) }}{% endif %}"
+                        itemprop="url"
+                        {% if treeItem.children|length > 0 %}
+                            data-flyout-menu-trigger="{{ treeItem.category.id }}"
+                        {% endif %}
+                        title="{{ treeItem.category.translated.name }}">
+                        <div class="main-navigation-link-text">
+                            <span itemprop="name">{{ treeItem.category.translated.name }}</span>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 

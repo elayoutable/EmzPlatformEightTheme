@@ -10,6 +10,22 @@
         border-right: 1px solid #545454;
         padding-right: 15px;
 
+        a.main-navigation-link {
+            padding: 0;
+            color: #545454;
+
+            &.active {
+                .main-navigation-link-text {
+                    border-color: #545454;
+                }
+            }
+
+            .main-navigation-link-text {
+                padding: 0;
+                margin: 0;
+            }
+        }
+
         &:last-child {
             margin-right: 0;
             border-right: 0;
