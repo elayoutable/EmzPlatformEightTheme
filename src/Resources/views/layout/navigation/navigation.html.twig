@@ -1,0 +1,44 @@
+{% sw_extends '@Storefront/layout/navigation/navigation.html.twig' %}
+
+{% block layout_main_navigation_menu_home %}{% endblock %}
+
+{% block layout_main_navigation_menu_items %}
+    {% if page.header.navigation.active.level == 2 %}
+        {% set emzetCategories = page.header.navigation.tree[page.header.navigation.active.id].children %}
+    {% else %}
+        {% if page.header.navigation.active.level >= 3 %}
+            {% set splittedPath = page.header.navigation.active.path|split('|') %}
+            {% set emzetCategories = page.header.navigation.tree[splittedPath.2].children %}
+        {% else %}
+            {% set emzetCategories = [] %}
+        {% endif %}
+    {% endif %}
+    
+    {% for treeItem in emzetCategories %}
+        {% block layout_main_navigation_menu_item %}
+            {% if treeItem.category.type == 'folder' %}
+                <div class="nav-link main-navigation-link"
+                    {% if treeItem.children|length > 0 %}
+                        data-flyout-menu-trigger="{{ treeItem.category.id }}"
+                    {% endif %}
+                        title="{{ treeItem.category.translated.name }}">
+                    <div class="main-navigation-link-text">
+                        <span itemprop="name">{{ treeItem.category.translated.name }}</span>
+                    </div>
+                </div>
+            {% else %}
+                <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(page.header.navigation.active.id) %} active{% endif %}"
+                    href="{% if treeItem.category.externalLink %}{{ treeItem.category.externalLink }}{% else %}{{ navigationUrl(treeItem.category) }}{% endif %}"
+                    itemprop="url"
+                    {% if treeItem.children|length > 0 %}
+                        data-flyout-menu-trigger="{{ treeItem.category.id }}"
+                    {% endif %}
+                    title="{{ treeItem.category.translated.name }}">
+                    <div class="main-navigation-link-text">
+                        <span itemprop="name">{{ treeItem.category.translated.name }}</span>
+                    </div>
+                </a>
+            {% endif %}
+        {% endblock %}
+    {% endfor %}
+{% endblock %}

@@ -11,5 +11,75 @@
   ],
   "asset": [
     "Resources/storefront/asset"
-  ]
+  ],
+  "config": {
+    "blocks": {
+      "general": {
+        "label": {
+          "en-GB": "General",
+          "de-DE": "Allgemein"
+        }
+      },
+      "desktop": {
+        "label": {
+          "en-GB": "Desktop",
+          "de-DE": "Desktop"
+        }
+      },
+      "tablet": {
+        "label": {
+          "en-GB": "Tablet",
+          "de-DE": "Tablet"
+        }
+      },
+      "smartphone": {
+        "label": {
+          "en-GB": "Smartphone",
+          "de-DE": "Smartphone"
+        }
+      }
+    },
+    "fields": {
+      "emzet-background-color": {
+        "label": {
+          "en-GB": "Background color",
+          "de-DE": "Hintergrundfarbe"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "block": "general"
+      },
+      "emzet-desktop-text1": {
+        "label": {
+          "en-GB": "Text 1",
+          "de-DE": "Text 1"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text",
+        "editable": true,
+        "block": "desktop"
+      },
+      "emzet-tablet-text1": {
+        "label": {
+          "en-GB": "Text 1",
+          "de-DE": "Text 1"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text",
+        "editable": true,
+        "block": "tablet"
+      },
+      "emzet-smartphone-text1": {
+        "label": {
+          "en-GB": "Text 1",
+          "de-DE": "Text 1"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text",
+        "editable": true,
+        "block": "smartphone"
+      }
+    }
+  }
 }

@@ -1,4 +1,24 @@
-.emz-header-navigation {
+.header-row {
+    padding: 0;
+    height: 65px;
+
+    .header-logo-col {
+        padding: 0;
+
+        .header-logo-main {
+            img {
+                height: 65px;
+            }
+        }
+    }
+}
+
+.header-search {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.emzet-header-navigation {
     display: flex;
     list-style-type: none;
     padding-left: 0;

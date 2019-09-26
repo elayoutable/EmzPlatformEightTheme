@@ -1,11 +1,22 @@
 {% sw_extends '@Storefront/layout/header/header.html.twig' %}
 
 {% block layout_header_logo %}
+
+    {% set splittedPath = page.header.navigation.active.path|split('|') %}
+    
+    {% if splittedPath[2] %}
+        {% set activeMainCategory = splittedPath[2] %}
+    {% else %}
+        {% set activeMainCategory = page.header.navigation.active.id %}
+    {% endif %}
+
+    {{ dump() }}
+
     <div class="col-12 col-lg">
-        <ul class="emz-header-navigation">
+        <ul class="emzet-header-navigation">
             {% for treeItem in page.header.navigation.tree %}
                 <li>
-                    <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(page.header.navigation.active.id) %} active{% endif %}"
+                    <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(activeMainCategory) %} active{% endif %}"
                         href="{% if treeItem.category.externalLink %}{{ treeItem.category.externalLink }}{% else %}{{ navigationUrl(treeItem.category) }}{% endif %}"
                         itemprop="url"
                         {% if treeItem.children|length > 0 %}
