@@ -1,6 +1,10 @@
 @mixin emzet-wrapper() {
     display: flex;
 
+    background-color: $emzet-background-color;
+    color: $emzet-text-color;
+    font-size: $emzet-font-size;
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -43,9 +47,7 @@
         display: none;
     }
 
-    .emzet-desktop-wrapper {
-        background-color: $emzet-background-color;
-        
+    .emzet-desktop-wrapper {        
         @include emzet-wrapper();
     
         .emzet-item {

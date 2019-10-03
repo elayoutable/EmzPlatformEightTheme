@@ -14,6 +14,14 @@
   ],
   "config": {
     "blocks": {
+      "emzConversionHeader": {
+        "label": {
+          "en-GB": "Conversion Header",
+          "de-DE": "Conversion Header"
+        }
+      }
+    },
+    "sections": {
       "general": {
         "label": {
           "en-GB": "General",
@@ -48,7 +56,30 @@
         "type": "color",
         "value": "#FFFFFF",
         "editable": true,
-        "block": "general"
+        "section": "general",
+        "block": "emzConversionHeader"
+      },
+      "emzet-text-color": {
+        "label": {
+          "en-GB": "Text color",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#000000",
+        "editable": true,
+        "section": "general",
+        "block": "emzConversionHeader"
+      },
+      "emzet-font-size": {
+        "label": {
+          "en-GB": "Font size",
+          "de-DE": "Schriftgröße"
+        },
+        "type": "fontFamily",
+        "value": "14px",
+        "editable": true,
+        "section": "general",
+        "block": "emzConversionHeader"
       },
       "emzet-desktop-text1": {
         "label": {
@@ -58,7 +89,52 @@
         "type": "fontFamily",
         "value": "Mein Text",
         "editable": true,
-        "block": "desktop"
+        "section": "desktop",
+        "block": "emzConversionHeader"
+      },
+      "emzet-desktop-text2": {
+        "label": {
+          "en-GB": "Text 2",
+          "de-DE": "Text 2"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 2",
+        "editable": true,
+        "section": "desktop",
+        "block": "emzConversionHeader"
+      },
+      "emzet-desktop-text3": {
+        "label": {
+          "en-GB": "Text 3",
+          "de-DE": "Text 3"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 3",
+        "editable": true,
+        "section": "desktop",
+        "block": "emzConversionHeader"
+      },
+      "emzet-desktop-text4": {
+        "label": {
+          "en-GB": "Text 4",
+          "de-DE": "Text 4"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 4",
+        "editable": true,
+        "section": "desktop",
+        "block": "emzConversionHeader"
+      },
+      "emzet-desktop-text5": {
+        "label": {
+          "en-GB": "Text 5",
+          "de-DE": "Text 5"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 5",
+        "editable": true,
+        "section": "desktop",
+        "block": "emzConversionHeader"
       },
       "emzet-tablet-text1": {
         "label": {
@@ -68,7 +144,30 @@
         "type": "fontFamily",
         "value": "Mein Text",
         "editable": true,
-        "block": "tablet"
+        "section": "tablet",
+        "block": "emzConversionHeader"
+      },
+      "emzet-tablet-text2": {
+        "label": {
+          "en-GB": "Text 2",
+          "de-DE": "Text 2"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 2",
+        "editable": true,
+        "section": "tablet",
+        "block": "emzConversionHeader"
+      },
+      "emzet-tablet-text3": {
+        "label": {
+          "en-GB": "Text 3",
+          "de-DE": "Text 3"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 3",
+        "editable": true,
+        "section": "tablet",
+        "block": "emzConversionHeader"
       },
       "emzet-smartphone-text1": {
         "label": {
@@ -78,7 +177,19 @@
         "type": "fontFamily",
         "value": "Mein Text",
         "editable": true,
-        "block": "smartphone"
+        "section": "smartphone",
+        "block": "emzConversionHeader"
+      },
+      "emzet-smartphone-text2": {
+        "label": {
+          "en-GB": "Text 2",
+          "de-DE": "Text 2"
+        },
+        "type": "fontFamily",
+        "value": "Mein Text 2",
+        "editable": true,
+        "section": "smartphone",
+        "block": "emzConversionHeader"
       }
     }
   }
