@@ -1,11 +1,32 @@
 {% sw_extends '@Storefront/layout/header/header.html.twig' %}
 
 {% block layout_header_logo %}
+
+    {% set splittedPath = page.header.navigation.active.path|split('|') %}
+    
+    {% if splittedPath[2] %}
+        {% set activeMainCategory = splittedPath[2] %}
+    {% else %}
+        {% set activeMainCategory = page.header.navigation.active.id %}
+    {% endif %}
+
     <div class="col-12 col-lg">
-        <ul class="emz-header-navigation">
-            <li>Damen</li>
-            <li>Herren</li>
-            <li>Kinder</li>
+        <ul class="emzet-header-navigation d-none d-lg-flex">
+            {% for treeItem in page.header.navigation.tree %}
+                <li>
+                    <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(activeMainCategory) %} active{% endif %}"
+                        href="{% if treeItem.category.externalLink %}{{ treeItem.category.externalLink }}{% else %}{{ navigationUrl(treeItem.category) }}{% endif %}"
+                        itemprop="url"
+                        {% if treeItem.children|length > 0 %}
+                            data-flyout-menu-trigger="{{ treeItem.category.id }}"
+                        {% endif %}
+                        title="{{ treeItem.category.translated.name }}">
+                        <div class="main-navigation-link-text">
+                            <span itemprop="name">{{ treeItem.category.translated.name }}</span>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 
@@ -17,10 +38,10 @@
 {% block layout_header_search %}{% endblock %}
 
 {% block layout_header_actions %}
-    <div class="col-12 order-1 col-lg col-sm-auto order-sm-2 header-actions-col">
+    <div class="col-12 order-1 col-lg order-sm-2 header-actions-col">
         <div class="row no-gutters justify-content-end">
             {% block layout_header_navigation_toggle %}
-                <div class="col d-sm-none">
+                <div class="col d-lg-none">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
                             <button class="btn nav-main-toggle-btn header-actions-btn"
