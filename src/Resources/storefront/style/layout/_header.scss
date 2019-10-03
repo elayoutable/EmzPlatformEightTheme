@@ -1,6 +1,5 @@
 .header-row {
     padding: 0;
-    height: 65px;
 
     .header-logo-col {
         padding: 0;
@@ -16,6 +15,7 @@
 .header-search {
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 0 32px;
 }
 
 .emzet-header-navigation {
@@ -50,5 +50,11 @@
             margin-right: 0;
             border-right: 0;
         }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .header-row {
+        height: 65px;
     }
 }

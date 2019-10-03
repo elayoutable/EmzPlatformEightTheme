@@ -11,7 +11,7 @@
     {% endif %}
 
     <div class="col-12 col-lg">
-        <ul class="emzet-header-navigation">
+        <ul class="emzet-header-navigation d-none d-lg-flex">
             {% for treeItem in page.header.navigation.tree %}
                 <li>
                     <a class="nav-link main-navigation-link{% if treeItem.category.id is same as(activeMainCategory) %} active{% endif %}"
@@ -38,10 +38,10 @@
 {% block layout_header_search %}{% endblock %}
 
 {% block layout_header_actions %}
-    <div class="col-12 order-1 col-lg col-sm-auto order-sm-2 header-actions-col">
+    <div class="col-12 order-1 col-lg order-sm-2 header-actions-col">
         <div class="row no-gutters justify-content-end">
             {% block layout_header_navigation_toggle %}
-                <div class="col d-sm-none">
+                <div class="col d-lg-none">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
                             <button class="btn nav-main-toggle-btn header-actions-btn"
