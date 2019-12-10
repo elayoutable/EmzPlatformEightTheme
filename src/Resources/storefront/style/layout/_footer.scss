@@ -1,4 +1,44 @@
 .footer-main {
-    // background-color: #eceaeb;
-    background-color: green;
+    background-color: #eceaeb;
+}
+
+.footer-bottom {
+    background-color: #4a4a4a;
+    color: #888;
+
+    li a {
+        color: white;
+    }
+
+    .container {
+        display: flex;
+
+        .emzet-footer-bottom-box-left {
+            width: 70%;
+            text-align: left;
+
+            .footer-service-menu-list {
+                text-align: left;
+            }
+
+            .footer-vat {
+                text-align: left;
+            }
+
+            .footer-copyright {
+                text-align: left;
+            }
+        }
+
+        .emzet-footer-bottom-box-right {
+            width: 30%;
+            text-align: right;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .footer-service-menu-list {
+        display: block;
+    }
 }

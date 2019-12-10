@@ -1,5 +1,7 @@
 {% sw_extends '@Storefront/base.html.twig' %}
 
+{% set isHMRMode = true %}
+
 {% block base_header %}
     {% sw_include '@Storefront/layout/header/emzet-conversion-header.html.twig' %}
 
@@ -10,4 +12,58 @@
     {% sw_include '@Storefront/layout/header/search.html.twig' %}
     
     {{ parent() }}
+{% endblock %}
+
+{% block base_footer %}
+    {{ parent() }}
+
+    {% block layout_footer_bottom %}
+        <div class="footer-bottom">
+            {% block layout_footer_service_menu %}
+                <div class="container">
+                    <div class="emzet-footer-bottom-box emzet-footer-bottom-box-left">
+                        {% block layout_footer_service_menu_content %}
+                            <ul class="footer-service-menu-list list-unstyled">
+                                {% for serviceMenuItem in page.header.serviceMenu %}
+                                    {% block layout_footer_service_menu_item %}
+                                        <li class="footer-service-menu-item">
+                                            <a class="footer-service-menu-link"
+                                            href="{{ navigationUrl(serviceMenuItem) }}"
+                                            title="{{ serviceMenuItem.translated.name }}">
+                                                {{ serviceMenuItem.translated.name }}
+                                            </a>
+                                        </li>
+                                    {% endblock %}
+                                {% endfor %}
+                            </ul>
+                        {% endblock %}
+
+                        {% block layout_footer_vat %}
+                            <div class="footer-vat">
+                                {% if context.taxState == "gross" %}
+                                    <p>{{ "footer.includeVat"|trans|raw }}</p>
+                                {% else %}
+                                    <p>{{ "footer.excludeVat"|trans|raw }}</p>
+                                {% endif %}
+                            </div>
+                        {% endblock %}
+
+                        {% block layout_footer_copyright %}
+                            <div class="footer-copyright">
+                                {% sw_icon 'shopware' style {'size':'xs'} %}
+                                {{ "footer.copyrightInfo"|trans }}
+                            </div>
+                        {% endblock %}
+                    </div>
+
+                    <div class="emzet-footer-bottom-box emzet-footer-bottom-box-right">
+                        <div class="emzet-footer-bottom-social-media-label">Folge uns auf:</div>
+                        <div class="emzet-footer-bottom-social-media-icons">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
 {% endblock %}
